@@ -1,0 +1,25 @@
+<div gscaseheight="gscaseheight" class="content-details-wrap"><div class="gs-msg-header gs-mobile"><div ng-if="!commentRep" class="gs-msgs-loader"></div><div ng-show="commentRep" class="gs-msg-header-rep"><img ng-src="{{commentRepUrl | gsformaturl }}" ng-if="commentRep" class="gs-msg-header-rep-img"><p class="gs-msg-header-service">At your service...</p><p class="gs-msg-header-name">{{commentRep}}</p><span ng-if="commentRepRating" class="gs-msg-header-rating">{{commentRepRating}}<span class="gs-icons-sm"></span></span><p ng-if="ticketCommentsRes" class="gs-msg-header-response gs-desktop">Last response {{ticketCommentsRes | timeago}}</p><a ng-click="viewComments()" class="btn btn-primary gs-msg-view-chat gs-mobile-inline">View Chat</a></div></div><div ng-if="!msgErrComments &amp;&amp; !ticketDetails" class="gs-msgs-loader"></div><div ng-if="msgErrComments" class="alert alert-danger">There was a problem loading your messages, please try again later.</div><div ng-show="ticketDetails.custom_fields" ng-cloak="ng-cloak" ng-if="ticketDetails" class="content-details-list ng-cloak"><div class="gs-icon gs-desktop"><span class="gs-icon-service gs-middle-center"></span></div><p class="gs-details-summary gs-desktop">Service Summary</p><h1>{{ticketDetails.custom_fields | gsfieldmap : 'company' : ticketDetails.id}}</h1><ul class="gs-details-list"><li class="gs-details-list-item"><span class="gs-details-list-title">Started</span><span>{{ticketDetails.created_at | date : format : 'fullDate'}}</span></li><li class="gs-details-list-item"><span class="gs-details-list-title">Last update</span><span>{{ticketDetails.updated_at | date : format : 'fullDate'}}</span></li><li ng-repeat="(key, value) in ticketDetails.formatted_custom" class="gs-details-list-item"><span class="gs-details-list-title">{{key}}</span><span>{{value}}</span></li><!--li(class="gs-details-list-item")
+      span(class="gs-details-list-title") Problem
+      span {{ticketDetails.custom_fields | gsfieldmap : 'issue'}}
+      
+      --><!--li(class="gs-details-list-item")
+      span(class="gs-details-list-title") Desire
+      span {{ticketDetails.custom_fields | gsfieldmap : 'desired_result'}}
+      
+      --><li class="gs-details-list-item"><span class="gs-details-list-title">Status</span><span>{{ticketDetails.status}}</span></li><li class="gs-details-list-item"><span class="gs-details-list-title">Case ID</span><span>{{ticketDetails.id}}</span></li><!--li(class="gs-details-list-item")
+      span(class="gs-details-list-title") Alerts
+        span(class="gs-details-list-alerts gs-tooltip",ng-init="gsTooltip=false",ng-click="gsTooltip ? gsTooltip = false : gsTooltip = true") ?
+          span(class="gs-tooltip-popup",ng-show="gsTooltip",ng-hide="!gsTooltip") Turning your alerts on will allow us to notify you on any updates to your Service.
+          
+      span(class="gs-details-list-dropdown",data-toggle="dropdown",data-placement="top",title="Some text") On Email
+        span(class="caret gs-icons-sm gs-caret")
+        
+      ul(class="dropdown-menu gs-details-list-dropdown",role="menu")
+        li
+          a(href="#") On: Email
+        li
+          a(href="#") On: SMS Text
+        li
+          a(href="#") Off
+          
+      --></ul><p>Summary</p><p class="gs-content-msg-summary">{{ticketDetails.description | gsformatsummary}}</p></div></div>

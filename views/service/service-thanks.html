@@ -1,0 +1,11 @@
+<div ng-switch-when="thanks" ng-form="ng-form"><div class="gs-icon gs-icon-thanks"></div><h2 class="gs-overlay-thanks"><span class="gs-bold">Sit back &amp; relax.</span><br><span>We're on it and you'll hear from us soon.</span> <!--a(ng-click="gotoCase(newsvc.id)") Take me to my ticket--></h2><div ng-if="submitThanks" class="alert alert-success">Your referral has been received.</div><div ng-form="ng-form" class="form-group pb35"><select ng-model="newsvc.utm_source" name="referrer" placeholder="How did you hear about us?" class="form-control gs-overlay-content-input"><option value="">How did you hear about service?<option value="Twitter">Twitter<option value="Facebook">Facebook<option value="Google">Google<option value="LinkedIn">LinkedIn<option value="Word of Mouth">Word of Mouth<option value="A Friend">A Friend<option value="Other">Other</select><input type="text" ng-model="newsvc.referral_other" ng-if="newsvc.utm_source == 'Other'" class="form-control input-lg gs-overlay-content-input mt10"></div><!--p(class="gs-overlay-share pl35 pr35 mb0 pb10 gs-center") Know a friend that has an issue?<br>
+  span Share us with them and save them time!
+  
+  --><!--div(class="gs-overlay-social gs-center pb20")
+  a(href="mailto:?subject=Service%20-%20on%20demand%20customer%20service&amp;body=I%20just%20used%20Service%20to%20solve%20an%20issue%20I%20had%20with%20a%20business%20-%20it%E2%80%99s%20so%20cool%2C%20you%20tell%20them%20what%20happened%20and%20they%20make%20it%20right%20without%20you%20having%20to%20waste%20your%20time%21%20Check%20them%20out%20at%20http%3A%2F%2Fgetservice.com",class="email")
+   span(class="gs-social-email")
+  a(target="_blank",href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgetservice.com%2Fshare%2F",class="facebook")
+   span(class="gs-social-fb")
+  a(target="_blank",href="http://twitter.com/intent/tweet?text=I%20just%20used%20%40service%20to%20solve%20an%20issue%20I%20had%20with%20a%20business%20-%20tell%20them%20what%20happened%20%26%20they%20make%20it%20right%20for%20you%21%20http%3A%2F%2Fgetservice.com",class="twitter")
+   span(class="gs-social-twitter")
+  --></div>

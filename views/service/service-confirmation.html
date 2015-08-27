@@ -1,0 +1,26 @@
+<div ng-switch-when="confirmation" ng-form="ng-form" name="svcConf"><h1 class="pb5">You're all set!</h1><div ng-if="gssvc.error" class="alert alert-danger">{{gssvc.error}}</div><div ng-if="gssvc.success" class="alert alert-success">{{gssvc.success}}</div><div><div class="gs-relative pb20"><p class="gs-overlay-conf-txt pl35">Forward the confirmation</p><div class="gs-overlay-conf-address ml35 mr35 mb40"><span clip-copy="gssvc.email" clip-click="gssvc.copyEmailCallback()" class="btn btn-primary gs-btn-dk-blue right gs-desktop">{{gssvc.copyTxt}}</span><span class="gs-overlay-conf-address">{{gssvc.email}}</span></div><p class="gs-overlay-conf-txt pl35">Or attach the confirmation</p><div class="control-group mr35 ml35"><div class="controls"><div ng-if="uploadDisable" class="progress progress-bar-upload"><div style="width:{{fileProgress}}" class="progress-bar"></div></div><span ngf-select="ngf-select" ngf-accept="'.gif,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.pdf,.mov,.qt,.wmv,.mp4,.m4p,.m4v'" ngf-change="upload($file)" ng-class="{'disabled': uploadDisable }" ngf-validate="{size: {min:'1KB', max:'20MB'}}" class="btn btn-primary gs-btn-dk-blue">Attach File</span></div></div><ul ng-if="newsvcUploads" class="gs-overlay-files pr35 pl35"><li ng-repeat="(key, value) in uploadedFiles track by $index">{{value.name}}<span ng-click="removeUpload(key, value.token)" class="gs-overlay-files-remove">&times;</span></li></ul></div></div><!----><!--div(ng-repeat="need in gssvc.confResults.Needs track by $index", ng-if="need == 'Itinerary'")
+  div(class="gs-relative", ng-if="need == 'Itinerary'")
+   p(class="gs-overlay-email-conf") Email your original {{newsvc.company}} confirmation to 
+    a(ng-href="mailto:{{gssvc.newEmail}}?subject=GetService.com", target=" _self") {{gssvc.email}}
+    
+   p(class="gs-link gs-bold gs-uppercase gs-12 gs-overlay-email", clip-copy="gssvc.email", clip-click="gssvc.copyEmailCallback()")
+    span(class="gs-desktop") {{gssvc.copyTxt}} 
+    span(class="gs-mobile-inline") Copy Email Address
+    
+   //div(class="form-group gs-overlay-textarea")
+    textarea(class="form-control",placeholder="Please copy and paste your original ticket confirmation", ng-model="newsvc.confirmation")
+    
+  //div(class="form-group",ng-if="need != 'Itinerary' && need.length > 0")
+   input(type="text",placeholder="{{need | gsconfformat}}", ng-model="newsvc.needs[need]", class="form-control input-lg gs-overlay-content-input input-validate",name="{{need}}")
+   
+  --><!--div(class="progress")div(class="progress-bar progress-bar-info progress-bar-striped", style="width:60%")
+  --></div><script type="text/javascript">/* <![CDATA[ */
+  var google_conversion_id = 947894914;
+  var google_conversion_language = "en";
+  var google_conversion_format = "3";
+  var google_conversion_color = "ffffff";
+  var google_conversion_label = "ohrICOql5l4QgvX-wwM";
+  var google_remarketing_only = false;
+  /* ]]> */</script><script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script><noscript><div style="display:inline"><img height="1" width="1" style="border-style:none" alt="" src="//www.googleadservices.com/pagead/conversion/947894914/?label=ohrICOql5l4QgvX-wwM&amp;amp;guid=ON&amp;amp;script=0"></div></noscript><script>window._fbq = window._fbq || [];
+  window._fbq.push(['track', '6024479298145', {'value':'0.01','currency':'USD'}]);
+  twttr.conversion.trackPid('l62z1');</script><noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6024479298145&amp;amp;cd[value]=0.01&amp;amp;cd[currency]=USD&amp;amp;noscript=1"><img height="1" width="1" style="display:none" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=l62z1&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0"><img height="1" width="1" style="display:none" alt="" src="//t.co/i/adsct?txn_id=l62z1&amp;p_id=Twitter&amp;tw_sale_amount=0&amp;tw_order_quantity=0"></noscript>
